@@ -170,6 +170,7 @@ set(SRC
   nodes/node_geo_viewer.cc
   nodes/node_geo_volume_cube.cc
   nodes/node_geo_volume_to_mesh.cc
+  nodes/node_geo_transformer.cc
 
   node_geometry_exec.cc
   node_geometry_tree.cc

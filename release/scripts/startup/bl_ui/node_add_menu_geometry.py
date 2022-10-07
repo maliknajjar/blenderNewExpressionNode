@@ -16,6 +16,7 @@ class NODE_MT_geometry_node_GEO_ATTRIBUTE(Menu):
         node_add_menu.add_node_type(layout, "GeometryNodeAttributeDomainSize")
         node_add_menu.add_node_type(layout, "GeometryNodeRemoveAttribute")
         node_add_menu.add_node_type(layout, "GeometryNodeStoreNamedAttribute")
+        node_add_menu.add_node_type(layout, "GeometryNodeTransformer")
 
 
 class NODE_MT_geometry_node_GEO_COLOR(Menu):

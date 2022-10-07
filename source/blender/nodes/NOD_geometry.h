@@ -161,6 +161,7 @@ void register_node_type_geo_uv_unwrap(void);
 void register_node_type_geo_viewer(void);
 void register_node_type_geo_volume_cube(void);
 void register_node_type_geo_volume_to_mesh(void);
+void register_node_type_geo_transformer(void);
 
 #ifdef __cplusplus
 }

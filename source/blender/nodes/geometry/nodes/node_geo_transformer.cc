@@ -15,19 +15,19 @@ NODE_STORAGE_FUNCS(NodeGeometryTrasnformer)
 
 static void node_declare(NodeDeclarationBuilder &b)
 {
-  // building the IO sockets
+  printf("python initialization: %d\n", Py_IsInitialized());
+  PyRun_SimpleString("import bpy\nprint('python is working from node declaration')");
   b.add_input<decl::Geometry>(N_("Geometry"));
   b.add_output<decl::Geometry>(N_("Geometry"));
 }
 
 static void node_update(bNodeTree *tree, bNode *node)
 {
-  bNodeSocket *out_socket_geometry = (bNodeSocket *)node->outputs.first;
+  printf("updating the node\n\n");
 }
 
 static void node_init(bNodeTree *tree, bNode *node)
 {
-  // bNodeSocket *sock = node_add_socket_from_template()
 }
 
 static void node_geo_exec(GeoNodeExecParams params)
@@ -45,6 +45,7 @@ void register_node_type_geo_transformer()
 
   geo_node_type_base(&ntype, GEO_NODE_TRANSFORMER, "Transformer", NODE_CLASS_GEOMETRY);
   ntype.declare = file_ns::node_declare;
+  ntype.declaration_is_dynamic = true;
   ntype.initfunc = file_ns::node_init;
   ntype.updatefunc = file_ns::node_update;
   ntype.geometry_node_execute = file_ns::node_geo_exec;

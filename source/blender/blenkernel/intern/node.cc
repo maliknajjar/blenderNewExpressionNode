@@ -1087,6 +1087,7 @@ IDTypeInfo IDType_ID_NT = {
 
 static void node_add_sockets_from_type(bNodeTree *ntree, bNode *node, bNodeType *ntype)
 {
+  printf("GOING TO ADD SOCKETS\n\n\n");
   if (ntype->declare != nullptr) {
     node_verify_sockets(ntree, node, true);
     return;
@@ -1097,6 +1098,18 @@ static void node_add_sockets_from_type(bNodeTree *ntree, bNode *node, bNodeType 
     sockdef = ntype->inputs;
     while (sockdef->type != -1) {
       node_add_socket_from_template(ntree, node, sockdef, SOCK_IN);
+      printf(
+          "type: %d\nsubType: %d\nflag: %d\nname: %s\nvalues: %f %f %f %f\nmin: %f max: %f\n\n\n",
+          sockdef->type,
+          sockdef->subtype,
+          sockdef->flag,
+          sockdef->name,
+          sockdef->val1,
+          sockdef->val2,
+          sockdef->val3,
+          sockdef->val4,
+          sockdef->min,
+          sockdef->max);
       sockdef++;
     }
   }

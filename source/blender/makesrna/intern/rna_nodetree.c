@@ -10583,6 +10583,10 @@ static void def_geo_attribute_capture(StructRNA *srna)
   RNA_def_property_update(prop, NC_NODE | NA_EDITED, "rna_Node_update");
 }
 
+static void def_geo_transformer(StructRNA *srna)
+{
+}
+
 static void def_geo_delete_geometry(StructRNA *srna)
 {
   PropertyRNA *prop;

@@ -1550,6 +1550,11 @@ typedef struct NodeGeometryAttributeCapture {
   int8_t domain;
 } NodeGeometryAttributeCapture;
 
+typedef struct NodeGeometryTrasnformer {
+  // empty
+  int8_t script;
+} NodeGeometryTrasnformer;
+
 typedef struct NodeGeometryStoreNamedAttribute {
   /* eCustomDataType. */
   int8_t data_type;

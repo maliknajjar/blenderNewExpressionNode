@@ -15,8 +15,6 @@ NODE_STORAGE_FUNCS(NodeGeometryTrasnformer)
 
 static void node_declare(NodeDeclarationBuilder &b)
 {
-  printf("python initialization: %d\n", Py_IsInitialized());
-  PyRun_SimpleString("import bpy\nprint('python is working from node declaration')");
   b.add_input<decl::Geometry>(N_("Geometry"));
   b.add_output<decl::Geometry>(N_("Geometry"));
 }

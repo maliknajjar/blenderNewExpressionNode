@@ -1,0 +1,10 @@
+//////////////////////////////////////////////////////////////////////////
+// add the abilities or features you want this expression node to have: //
+//////////////////////////////////////////////////////////////////////////
+
+• Create a new attribute whether it is empty or initialized with different type values (float, integer, string, vector, )
+• Get existing attribute values
+• Set existing attribute values
+• Create UI controls for variables or attribute with all types
+• builtin functions (ex: fit(), rand(), sin(), cos(), radians(), length(), distance() from houdini's vex)
+• Global variables (ex: ptnum, numpt, time, frame, primnum, numprim from houdini's vex)

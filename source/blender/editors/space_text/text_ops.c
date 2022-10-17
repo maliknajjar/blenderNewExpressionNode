@@ -343,6 +343,7 @@ static int text_open_exec(bContext *C, wmOperator *op)
 
   RNA_string_get(op->ptr, "filepath", str);
 
+  printf("open execute function and it's internal bool value is: %d\n", internal);
   text = BKE_text_load_ex(bmain, str, BKE_main_blendfile_path(bmain), internal);
 
   if (!text) {

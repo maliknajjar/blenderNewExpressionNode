@@ -1550,11 +1550,6 @@ typedef struct NodeGeometryAttributeCapture {
   int8_t domain;
 } NodeGeometryAttributeCapture;
 
-typedef struct NodeGeometryTrasnformer {
-  // empty
-  int8_t script;
-} NodeGeometryTrasnformer;
-
 typedef struct NodeGeometryStoreNamedAttribute {
   /* eCustomDataType. */
   int8_t data_type;
@@ -1643,9 +1638,9 @@ typedef struct NodeShaderMix {
   char _pad[3];
 } NodeShaderMix;
 
-typedef struct NodeGeometryTransformer {
-  char file_text[64];
-} NodeGeometryTransformer;
+// typedef struct NodeGeometryTransformer {
+//   void *file_name;
+// } NodeGeometryTransformer;
 
 /* script node mode */
 #define NODE_SCRIPT_INTERNAL 0

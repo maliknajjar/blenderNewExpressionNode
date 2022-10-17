@@ -10,6 +10,8 @@
 
 struct bArgs;
 struct bContext;
+/* global bContext */
+bContext *C;
 
 #ifdef __cplusplus
 extern "C" {

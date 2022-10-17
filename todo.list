@@ -8,10 +8,3 @@
 • Create UI controls for variables or attribute with all types
 • builtin functions (ex: fit(), rand(), sin(), cos(), radians(), length(), distance() from houdini's vex)
 • Global variables (ex: ptnum, numpt, time, frame, primnum, numprim from houdini's vex)
-• Get attribute values from other points, other geo
-
-/////////////////////////////////////////////////////////////////////
-// some exercises to do after finishing the expression node system //
-/////////////////////////////////////////////////////////////////////
-
-• create a simple sine wave grid effect

@@ -9,11 +9,7 @@
 #include "UI_interface.h"
 #include "UI_resources.h"
 
-#include "BKE_context.h"
-#include "BKE_lib_id.h"
-#include "BKE_main.h"
-#include "BKE_report.h"
-#include "BKE_text.h"
+#include "DNA_text_types.h"
 
 namespace blender::nodes::node_geo_transformer_cc {
 
@@ -29,19 +25,20 @@ static void node_declare(NodeDeclarationBuilder &b)
 
 static void node_layout(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
 {
-  uiItemR(layout, ptr, "file_name", UI_ITEM_R_SPLIT_EMPTY_NAME, "", ICON_NONE);
+  uiItemR(layout, ptr, "Text", UI_ITEM_R_SPLIT_EMPTY_NAME, "", ICON_NONE);
 }
 
 static void node_init(bNodeTree *tree, bNode *node)
 {
   printf("node_init\n");
-  // adding a simple text for testing
   // NodeGeometryTransformer *nss = MEM_cnew<NodeGeometryTransformer>("__func__");
   // node->storage = nss;
 }
 
 static void node_update(bNodeTree *tree, bNode *node)
 {
+  Text *text = (Text *)node->id;
+  printf("text content is: %s\n", text->sell->line);
   // const NodeGeometryTransformer &storage = node_storage(*node);
   // AssetMetaData *asset = node->id->asset_data;
   // printf("the pointer address of the file is: %p\n", asset);
@@ -70,8 +67,9 @@ void register_node_type_geo_transformer()
   //     node_copy_standard_storage);
   ntype.declare = file_ns::node_declare;
   ntype.declaration_is_dynamic = true;
-  // ntype.initfunc = file_ns::node_init;
+  ntype.initfunc = file_ns::node_init;
   ntype.updatefunc = file_ns::node_update;
   ntype.geometry_node_execute = file_ns::node_geo_exec;
+  ntype.draw_buttons = file_ns::node_layout;
   nodeRegisterType(&ntype);
 }

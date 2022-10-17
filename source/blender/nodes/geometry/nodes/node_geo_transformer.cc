@@ -35,6 +35,7 @@ static void node_layout(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
 static void node_init(bNodeTree *tree, bNode *node)
 {
   printf("node_init\n");
+  // adding a simple text for testing
   // NodeGeometryTransformer *nss = MEM_cnew<NodeGeometryTransformer>("__func__");
   // node->storage = nss;
 }

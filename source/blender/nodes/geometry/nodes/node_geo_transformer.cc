@@ -4,8 +4,6 @@
 #include "NOD_socket_search_link.hh"
 #include "node_geometry_util.hh"
 
-#include "Python.h"
-
 #include "UI_interface.h"
 #include "UI_resources.h"
 
@@ -25,7 +23,7 @@ static void node_declare(NodeDeclarationBuilder &b)
 
 static void node_layout(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
 {
-  uiItemR(layout, ptr, "Text", UI_ITEM_R_SPLIT_EMPTY_NAME, "", ICON_NONE);
+  uiItemR(layout, ptr, "text", UI_ITEM_R_SPLIT_EMPTY_NAME, "", ICON_NONE);
 }
 
 static void node_init(bNodeTree *tree, bNode *node)

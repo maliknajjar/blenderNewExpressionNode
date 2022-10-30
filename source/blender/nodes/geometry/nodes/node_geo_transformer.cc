@@ -9,6 +9,8 @@
 
 #include "DNA_text_types.h"
 
+#include "cling/Interpreter/Interpreter.h"
+
 namespace blender::nodes::node_geo_transformer_cc {
 
 // NODE_STORAGE_FUNCS(NodeGeometryTransformer)

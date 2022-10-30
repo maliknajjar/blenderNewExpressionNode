@@ -369,12 +369,14 @@ if(WITH_CPU_SIMD AND SUPPORT_NEON_BUILD)
 endif()
 
 if(WITH_ALEMBIC)
-  find_package_wrapper(Alembic)
+find_package_wrapper(Alembic)
 
-  if(NOT ALEMBIC_FOUND)
-    set(WITH_ALEMBIC OFF)
-  endif()
+if(NOT ALEMBIC_FOUND)
+set(WITH_ALEMBIC OFF)
 endif()
+endif()
+
+find_package_wrapper(Cling)
 
 if(WITH_USD)
   find_package_wrapper(USD)

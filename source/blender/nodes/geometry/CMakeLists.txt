@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 
-set(INC_SYS
-  ${PYTHON_INCLUDE_DIRS}
+list(APPEND INC_SYS
+  ${CLING_INCLUDE_DIRS}
 )
 
 set(INC

@@ -1,9 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 
-list(APPEND INC_SYS
-  ${CLING_INCLUDE_DIRS}
-)
-
 set(INC
   .
   ..
@@ -26,7 +22,11 @@ set(INC
   # RNA_prototypes.h
   ${CMAKE_BINARY_DIR}/source/blender/makesrna
 )
-
+  
+list(APPEND INC_SYS
+  # adding python includes
+  ${PYTHON_INCLUDE_DIRS}
+)
 
 set(SRC
   nodes/node_geo_accumulate_field.cc
@@ -188,6 +188,10 @@ set(LIB
   bf_functions
   bf_geometry
   bf_nodes
+
+  # adding python libraries
+  ${PYTHON_LINKFLAGS}
+  ${PYTHON_LIBRARIES}
 )
 
 if(WITH_BULLET)

@@ -376,8 +376,6 @@ set(WITH_ALEMBIC OFF)
 endif()
 endif()
 
-find_package_wrapper(Cling)
-
 if(WITH_USD)
   find_package_wrapper(USD)
 

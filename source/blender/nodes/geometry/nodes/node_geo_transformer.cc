@@ -4,12 +4,12 @@
 #include "NOD_socket_search_link.hh"
 #include "node_geometry_util.hh"
 
+#include "Python.h"
+
 #include "UI_interface.h"
 #include "UI_resources.h"
 
 #include "DNA_text_types.h"
-
-#include "cling/Interpreter/Interpreter.h"
 
 namespace blender::nodes::node_geo_transformer_cc {
 
@@ -30,27 +30,22 @@ static void node_layout(uiLayout *layout, bContext *UNUSED(C), PointerRNA *ptr)
 
 static void node_init(bNodeTree *tree, bNode *node)
 {
-  printf("node_init\n");
-  // NodeGeometryTransformer *nss = MEM_cnew<NodeGeometryTransformer>("__func__");
-  // node->storage = nss;
+  PyRun_SimpleString(
+      "from time import time,ctime\n"
+      "print('Today is',ctime(time()))\n");
 }
 
 static void node_update(bNodeTree *tree, bNode *node)
 {
   Text *text = (Text *)node->id;
-  printf("text content is: %s\n", text->sell->line);
-  // const NodeGeometryTransformer &storage = node_storage(*node);
-  // AssetMetaData *asset = node->id->asset_data;
-  // printf("the pointer address of the file is: %p\n", asset);
+  // printf("text content is: %s\n", text->sell->line);
 }
 
 static void node_geo_exec(GeoNodeExecParams params)
 {
   printf("node_geo_exec\n");
   GeometrySet geometry_set = params.extract_input<GeometrySet>("Mesh");
-  params.set_output("Mesh", std::move(geometry_set));
-
-  // const NodeGeometryTransformer &storage = node_storage(params.node());
+  params.set_output("Geometry", std::move(geometry_set));
 }
 
 }  // namespace blender::nodes::node_geo_transformer_cc
